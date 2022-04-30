@@ -16,6 +16,10 @@ totalVotes = float(0)
 candidateList = []
 #dictionary to hold election data
 candidateVotes = {}
+#create winning condition
+winningCandidate = ''
+winningCount = 0
+winningPercentage = 0
 #open election results
 with open(fileToLoad) as electionData:
     #prepare file to be read
@@ -40,7 +44,12 @@ with open(fileToLoad) as electionData:
     print(totalVotes)
     for candidateName in candidateList:
         votePercentage = (candidateVotes[candidateName]/totalVotes)*100
-        print(f'{candidateName}: recieved {votePercentage:.2f}% of the vote.')
+        print(f'{candidateName}: recieved {votePercentage:.2f}% of the vote. ({candidateVotes[candidateName]})')
+        if candidateVotes[candidateName] > winningCount and votePercentage > winningPercentage:
+            winningCount = candidateVotes[candidateName]
+            winningPercentage = votePercentage
+            winningCandidate = candidateName
+    print(f'The winner is: {winningCandidate}\nWinning Vote Count: {winningCount}\nWinning Percentage: {winningPercentage:.2f}%')
 
 
 
