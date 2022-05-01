@@ -39,9 +39,11 @@ with open(fileToLoad) as electionData:
     #analize our file
     for row in fileReader:
         totalVotes +=1
-        #add candidate names to candidate list, avoid duplicates
+        #add candidate names and counties to candidate list, avoid duplicates
         candidateName = row[2]
+        
         countyName = row[1]
+        #track and add unique counties to the list of counties
         if countyName not in countyList:
             #track counties
             countyList.append(countyName)
@@ -61,16 +63,24 @@ with open(fileToLoad) as electionData:
         #print(totalVoteRes, end="")
         txt_file.write(totalVoteRes)
         print(totalVoteRes)
-    #Vote analysis for county turnour
+    #Vote analysis for county turnout
+    #Iterate through county list
         for countyName in countyList:
+            #determine county vote percentages
             countyVotePercentage = (countyVotes[countyName]/totalVotes)*100
+            #create a variable to store output
             countyStats = (f'{countyName}: {countyVotePercentage:.2f} ({countyVotes[countyName]:,})\n')
+            #print output to console and save to file
             print (countyStats)
             txt_file.write(countyStats)
+            #determine the largest county by voter turnout
             if (countyVotes[countyName] > largestCountyVotes):
+                #set the largest county to the current county being viewed
                 largestCountyVotes = countyVotes[countyName]
                 largestCounty = countyName
+                #create a variable for the output
                 voterTurnout = (f'\n-------------------------\nThe largest county turnout was: {largestCounty} ({largestCountyVotes:,})\n-------------------------\n')
+        #print out put to console and save to file
         txt_file.write(voterTurnout)
         print(voterTurnout)
         
