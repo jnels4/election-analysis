@@ -25,7 +25,7 @@ The analysis of the election results showed thatt:
     - Raymon Anthony Doane
 
 
-The results were:
+The results per candidate were:
 
    - Charles Casper Stockham: recieved 23.05% of the vote. (85213)
     
@@ -66,6 +66,33 @@ The counties in the list were:
 - Denver
 - Jefferson
 - Arapahoe
+
+Once we determined each unique county, we needed to tabulate their votes and the percentage of the total vote.  You can see from the code below, we did this at the same time for the candidates and thte counties. 
+
+     #tally votes in dictionary tied to candidate name
+        candidateVotes[candidateName] +=1
+        countyVotes[countyName] +=1
+        
+We had the totals per county (and candidate), and we needed to determine ther percentages and the county with the highest turnout. To do that, we had to use the total votes per county and divide that by the total number of votes.  To do that, we used a for loop to iterate through each county in our county list, and then an if statement to determine if thte total number of votes was higher than the previous value of "largestCountyVotes" which was our place holder for the county with the largest vote turnout. If the current value of votes was larger than "largestCountyVotes" that became our largest county.  Once all of the counties had run through our algorithm, the largest turnout county was identified and reported.  We used a basic text file to store the output, as well as console reporting for ourselves while we were working and debugging our code.  The same(ish) formula was used to determine the winning candidate(shown above).  
+
+    #write to file    
+    with open (fileToSave,'w') as txt_file:   
+        totalVoteRes = (f'Election Results\n-------------------------\nTotal Votes:{int(totalVotes):,}\n-------------------------\nCounty Votes:\n')
+        #print(totalVoteRes, end="")
+        txt_file.write(totalVoteRes)
+        print(totalVoteRes)
+    #Vote analysis for county turnour
+        for countyName in countyList:
+            countyVotePercentage = (countyVotes[countyName]/totalVotes)*100
+            countyStats = (f'{countyName}: {countyVotePercentage:.2f} ({countyVotes[countyName]:,})\n')
+            print (countyStats)
+            txt_file.write(countyStats)
+            if (countyVotes[countyName] > largestCountyVotes):
+                largestCountyVotes = countyVotes[countyName]
+                largestCounty = countyName
+                voterTurnout = (f'\n-------------------------\nThe largest county turnout was: {largestCounty} ({largestCountyVotes:,})\n-------------------------\n')
+        txt_file.write(voterTurnout)
+        print(voterTurnout)
 
 The results showed that:
 
