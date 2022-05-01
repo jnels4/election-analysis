@@ -75,22 +75,24 @@ Once we determined each unique county, we needed to tabulate their votes and the
         
 We had the totals per county (and candidate), and we needed to determine ther percentages and the county with the highest turnout. To do that, we had to use the total votes per county and divide that by the total number of votes.  To do that, we used a for loop to iterate through each county in our county list, and then an if statement to determine if thte total number of votes was higher than the previous value of "largestCountyVotes" which was our place holder for the county with the largest vote turnout. If the current value of votes was larger than "largestCountyVotes" that became our largest county.  Once all of the counties had run through our algorithm, the largest turnout county was identified and reported.  We used a basic text file to store the output, as well as console reporting for ourselves while we were working and debugging our code.  The same(ish) formula was used to determine the winning candidate(shown above).  
 
-    #write to file    
-    with open (fileToSave,'w') as txt_file:   
-        totalVoteRes = (f'Election Results\n-------------------------\nTotal Votes:{int(totalVotes):,}\n-------------------------\nCounty Votes:\n')
-        #print(totalVoteRes, end="")
-        txt_file.write(totalVoteRes)
-        print(totalVoteRes)
-    #Vote analysis for county turnour
+    #Vote analysis for county turnout
+    #Iterate through county list
         for countyName in countyList:
+            #determine county vote percentages
             countyVotePercentage = (countyVotes[countyName]/totalVotes)*100
+            #create a variable to store output
             countyStats = (f'{countyName}: {countyVotePercentage:.2f} ({countyVotes[countyName]:,})\n')
+            #print output to console and save to file
             print (countyStats)
             txt_file.write(countyStats)
+            #determine the largest county by voter turnout
             if (countyVotes[countyName] > largestCountyVotes):
+                #set the largest county to the current county being viewed
                 largestCountyVotes = countyVotes[countyName]
                 largestCounty = countyName
+                #create a variable for the output
                 voterTurnout = (f'\n-------------------------\nThe largest county turnout was: {largestCounty} ({largestCountyVotes:,})\n-------------------------\n')
+        #print out put to console and save to file
         txt_file.write(voterTurnout)
         print(voterTurnout)
 
