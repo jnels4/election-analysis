@@ -67,7 +67,11 @@ The results showed that:
 ## Moving Forward
 
 
-The scripts used to determine the winning candidate can be used and adopted easily for any election.  We can adapt this script to a larger set of data by writing
+The scripts used to determine the winning candidate can be used and adopted easily for any election.  We can adapt this script to a larger set of data by instead writing the new analysis to a CSV (if the data spans hundreds or thousands of counties).  We can additionally reformat any piece of this code quite easily to meet the needs of any client.
+
+For an election comission, we can very easily analyze the total percentage of citizens that voted per county.  The commission could then focus on increasing voter turn out in any county/town/village/etc. that had a low percentage of voter turn out.  Our results could help inform a statewide voter turn out campaign to increase particpation in the election process.
+
+Addtionally, we can very easily add analysis on a per-county basis.  This would be particularly useful information for a candidate.  If a candidate wanted to focus in directly ony any county (or combination of counties), we could easily do that programatically, and produce any type of analysis they needed.  Doing this type of analysis would allow a candidate to narrow in and focus on a county or group of counties that they wanted to direct their campaign efforts to. 
     
     
     
