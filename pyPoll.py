@@ -32,30 +32,32 @@ with open(fileToLoad) as electionData:
     #analize our file
     for row in fileReader:
         totalVotes +=1
-        #add candidate names to candidate list
+        #add candidate names to candidate list, avoid duplicates
         candidateName = row[2]
         if candidateName not in candidateList:
             candidateList.append(candidateName)
             #track candidates 
             candidateVotes[candidateName] = 0
+        #tally votes in dictionary tied to candidate name
         candidateVotes[candidateName] +=1
-    print (candidateList)
-    print (candidateVotes)
-    print(totalVotes)
-    for candidateName in candidateList:
-        votePercentage = (candidateVotes[candidateName]/totalVotes)*100
-        print(f'{candidateName}: recieved {votePercentage:.2f}% of the vote. ({candidateVotes[candidateName]})')
-        if candidateVotes[candidateName] > winningCount and votePercentage > winningPercentage:
-            winningCount = candidateVotes[candidateName]
-            winningPercentage = votePercentage
-            winningCandidate = candidateName
-    print(f'The winner is: {winningCandidate}\nWinning Vote Count: {winningCount}\nWinning Percentage: {winningPercentage:.2f}%')
-
-
-
-
-#Perform Analysis
-with open(fileToSave,'w') as txt_file:
-    txt_file.write('Hello world 123\n')
-    txt_file.write('Counties in the election\n-----------------\nArapahoe\nDenver\nJefferson')
+    #write to file    
+    with open (fileToSave,'w') as txt_file:   
+        totalVoteRes = (f'Election Results\n-------------------------\nTotal Votes:{int(totalVotes):,}\n-------------------------\n')
+        #print(totalVoteRes, end="")
+        txt_file.write(totalVoteRes)
+    
+    
+    #Vote analysis for winner & percentages
+    
+        for candidateName in candidateList:
+            votePercentage = (candidateVotes[candidateName]/totalVotes)*100
+            candidateStats = (f'{candidateName}: recieved {votePercentage:.2f}% of the vote. ({candidateVotes[candidateName]})\n')
+            txt_file.write(candidateStats)
+            if candidateVotes[candidateName] > winningCount and votePercentage > winningPercentage:
+                winningCount = candidateVotes[candidateName]
+                winningPercentage = votePercentage
+                winningCandidate = candidateName
+        winSummary =(f'\nThe winner is: {winningCandidate}\nWinning Vote Count: {winningCount}\nWinning Percentage: {winningPercentage:.2f}%')
+        txt_file.write(winSummary)
+        
 
