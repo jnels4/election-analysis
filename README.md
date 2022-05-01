@@ -67,7 +67,7 @@ The results showed that:
 ## Moving Forward
 
 
-The scripts used to determine the winning candidate can be used and adopted easily for any election.  We can adapt this script to a larger 
+The scripts used to determine the winning candidate can be used and adopted easily for any election.  We can adapt this script to a larger set of data by writing
     
     
     
