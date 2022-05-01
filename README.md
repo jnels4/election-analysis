@@ -35,5 +35,6 @@ The results were:
     
 The winner of the election was determined to be: **Diana DeGette**
 
-Winning Vote Count: 272892
-Winning Percentage: 73.81%
+ - Winning Vote Count: 272892
+
+ - Winning Percentage: 73.81%
