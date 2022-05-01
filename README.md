@@ -38,3 +38,29 @@ The winner of the election was determined to be: **Diana DeGette**
  - Winning Vote Count: 272892
 
  - Winning Percentage: 73.81%
+
+## Additional Analysis
+
+The election employee wanted more information on a per-county basis as to how many votes each county had and the percentage of votes each county had of the total popular vote.  Additionally, they wanted to know the county with the most overall votes.
+
+**Tasks**
+1. Create a list of the counties for this election.
+2. Determine the number of votes for each county.
+3. Determine the percentage of votes from the total popular vote.
+4. Determine the county with the most total votes.
+
+## Summary
+
+Analysis of the results showed that there were 3 different counties in the election data. 
+- Denver
+- Jefferson
+- Arapahoe
+
+The results showed that:
+    - Denver had a total of: 82.78% of the total votes casted. (306,055) ** **Highest Turnout** **
+    - Jefferson had a total of: 10.51% of the total votes casted. (38,855)
+    - Arapahoe had a total of: 6.71 of the total votes casted. (24,801)
+    
+    
+    
+   
