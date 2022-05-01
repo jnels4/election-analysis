@@ -51,7 +51,18 @@ The election employee wanted more information on a per-county basis as to how ma
 
 ## Summary
 
-Analysis of the results showed that there were 3 different counties in the election data. 
+Analysis of the results showed that there were 3 different counties in the election data.  This data was too large to parse by hand, so we created a script that would add each unique county name to a list of counties. 
+
+    #track and add unique counties to the list of counties
+        if countyName not in countyList:
+            #track counties
+            countyList.append(countyName)
+            #innitialize votes to 0 for any county being added to dictioary
+            countyVotes[countyName]=0
+
+
+The counties in the list were:
+
 - Denver
 - Jefferson
 - Arapahoe
