@@ -27,11 +27,11 @@ The analysis of the election results showed thatt:
 
 The results were:
 
-    - Charles Casper Stockham: recieved 23.05% of the vote. (85213)
+   - Charles Casper Stockham: recieved 23.05% of the vote. (85213)
     
-    - Diana DeGette: recieved 73.81% of the vote. (272892)
+   - Diana DeGette: recieved 73.81% of the vote. (272892)
     
-    - Raymon Anthony Doane: recieved 3.14% of the vote. (11606)
+   - Raymon Anthony Doane: recieved 3.14% of the vote. (11606)
     
 The winner of the election was determined to be: **Diana DeGette**
 
@@ -57,9 +57,17 @@ Analysis of the results showed that there were 3 different counties in the elect
 - Arapahoe
 
 The results showed that:
-    - Denver had a total of: 82.78% of the total votes casted. (306,055) ** **Highest Turnout** **
-    - Jefferson had a total of: 10.51% of the total votes casted. (38,855)
-    - Arapahoe had a total of: 6.71 of the total votes casted. (24,801)
+
+   - Denver had a total of: 82.78% of the total votes casted. (306,055) ** **Highest Turnout** **
+    
+   - Jefferson had a total of: 10.51% of the total votes casted. (38,855)
+    
+   - Arapahoe had a total of: 6.71 of the total votes casted. (24,801)
+
+## Moving Forward
+
+
+The scripts used to determine the winning candidate can be used and adopted easily for any election.  We can adapt this script to a larger 
     
     
     
